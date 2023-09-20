@@ -1,8 +1,14 @@
+import './categories.styles.scss';
+import CategoryMenu from './components/category-menu/category-menu.component';
 
-const  App = () => {
+
+const App = () => {
+
   return (
-   <div>Hello World</div>
+    <div>
+      <CategoryMenu />
+    </div>
   );
-}
+};
 
 export default App;
