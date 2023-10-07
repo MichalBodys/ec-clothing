@@ -6,7 +6,6 @@ import {
 import FormInput from '../form-input/form-input.component';
 import './sign-up-form.styles.scss';
 import Button from '../button/button.component';
-import { UserContext } from '../../contexts/user.context';
 
 const deafaultFormFields = {
   displayName: '',
@@ -18,8 +17,6 @@ const deafaultFormFields = {
 const SignUpForm = () => {
   const [formFields, setFormFields] = useState(deafaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
-
-  const { setCurrentUser } = useContext(UserContext);
 
   console.log(formFields);
 
@@ -40,8 +37,6 @@ const SignUpForm = () => {
         email,
         password
       );
-
-      setCurrentUser(user);
 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
