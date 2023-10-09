@@ -8,7 +8,6 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
 
-
   return (
     <Fragment>
       <div className="navigation">
@@ -19,16 +18,18 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             Shop
           </Link>
+          <Link className="nav-link" to="/contact">
+            Contact
+          </Link>
           {currentUser ? (
-            <span onClick={signOutUser} className="nav-link">Sign out</span>
+            <span onClick={signOutUser} className="nav-link">
+              Sign out
+            </span>
           ) : (
             <Link className="nav-link" to="/auth">
               Sign in
             </Link>
           )}
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
         </div>
       </div>
       <Outlet />
