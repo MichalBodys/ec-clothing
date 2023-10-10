@@ -37,6 +37,7 @@
     background-color: white;
     color: black;
     border: 1px solid black;
+    transition: color .3s, background .3s;
 
     &:hover {
       background-color: black;
