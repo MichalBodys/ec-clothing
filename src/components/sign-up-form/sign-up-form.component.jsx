@@ -5,7 +5,7 @@ import {
 } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
 import './sign-up-form.styles.scss';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
 
 const deafaultFormFields = {
   displayName: '',
@@ -41,7 +41,9 @@ const SignUpForm = () => {
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
 
-      console.log(user);
+      // console.log(user);
+
+
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('Email already in use');
@@ -104,7 +106,7 @@ const SignUpForm = () => {
           }}
         />
 
-        <Button type="submit">Sign Up</Button>
+        <Button type={BUTTON_TYPE_CLASSES.inverted}>Sign Up</Button>
       </form>
     </div>
   );
